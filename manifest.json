@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Facebook经典版",
+    "description": "回到旧版本的Facebook.",
+    "author": "dev-coco",
+    "version": "1.0",
+    "browser_action": {
+       "default_popup": "./options.html"
+    },
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "content_scripts": [ {
+       "css": [ "style.css" ],
+       "matches": [ "*://*.facebook.com/*" ],
+       "run_at": "document_start"
+    } ],
+    "background" : {
+        "scripts" : ["background.js"]
+    },
+    "permissions": [ "webRequest", "webRequestBlocking", "*://*.facebook.com/*", "tabs", "storage" ]
+}
